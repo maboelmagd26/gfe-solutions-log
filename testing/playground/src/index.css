@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid red;
+  width: 1280px;
+}
+
+td,
+th {
+  padding: 4px;
+  border-bottom: 1px solid #ddd;
+  text-align: start;
+}
+
+th {
+  vertical-align: top;
+}
