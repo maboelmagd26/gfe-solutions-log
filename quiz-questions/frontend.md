@@ -17,3 +17,35 @@ Topics: `CSS`, Level : `EASY`, Importance: `HIGH`
 | `margins` and `paddings` | All sides respected | All sides respected | only horizonal sides are respected, vertical sides if set, don't affect the layout. Vertical space takes up depending on `line-height`, even though the `border` and `padding` appear visually around the content. |
 | Can be aligned with `vertical-align` | No | Yes | Yes |
 | use cases | Layout elements like `<div>`, `<p>`, `<section>`. | used for buttons, images, form fields that needs custom sizes and should stay in line with text | Links `<a>`, text formatting: `<span>`, text styling: bold `<b>`, italics `<i>`. |
+
+### 2. What does `* { box-sizing: border-box; }` do?
+
+`⭐ review`
+
+Topics: `CSS`, Level : `MEDIUM` Importance: `HIGH`.
+
+It is a CSS rule that applies to every `HTML` element on a webpage overriding the default `content-box` mode and ensuring that its box model `width` and `height` are calculated by summing up :
+
+- `Content:` : text, images, media, ..etc.
+- `Padding:` : the vertical and horizontal space between content and border.
+- `border:` the vertical and horizontal box model's boundaries.
+- `Margin:` the space outside the border, separating the element from others.
+
+#### Understanding the box model
+
+1.  with `box-sizing: content-box;` is the default mode and in this mode `width` and `height` only accounts for the `content` area and any `border`, `padding` added to the element increases its total size beyond the specified size.
+2.  with `box-sizing: border-box;`
+    the `height` and `width` include the `content`, `padding` and `border`.
+    the `content` area shrinks to accomodate for `padding` and `border` within the specified dimensions.
+
+#### Advantages of border box
+
+1. consistency across elements
+
+2. simplified layout calculations: you don't need to substact padding and border to calculate the content size reducing ui bugs in responsive designs.
+
+3. intuitive model that aligns with designers and developers mental model about the element that accounts for padding, content and border for the element.
+
+4. Better integrations with css frameworks like `Tailwind CSS` and `Bootstrap` that use `border-box` to fasten the development of predictable resposive layouts
+
+5. Improved form styling: Form elements like `input` and `select` often have browser-specific padding and borders. `border-box` ensures consistent sizing across browsers, making it easier to align form fields in a layout.
