@@ -49,3 +49,37 @@ It is a CSS rule that applies to every `HTML` element on a webpage overriding th
 4. Better integrations with css frameworks like `Tailwind CSS` and `Bootstrap` that use `border-box` to fasten the development of predictable resposive layouts
 
 5. Improved form styling: Form elements like `input` and `select` often have browser-specific padding and borders. `border-box` ensures consistent sizing across browsers, making it easier to align form fields in a layout.
+
+## 2. JAVASCRIPT and Web APIS
+
+### 1. What are the differences between JavaScript variables created using `let`, `var` or `const`?
+
+Topics: `JS`, Level : `MEDIUM` Importance: `HIGH`
+| Behavior | Var | let | const |
+| ------------------------- | -------------- | ----------------- | ------------------- |
+| Scope | function scope | block scope | block scope |
+| Re-declaration | Yes | forbidden | forbidden |
+| initialization | optional | option | must be initialized |
+| Reassignment | Yes | Yes | forbidden |
+| Access before declaration | undefined | `reference error` | `reference error` |
+
+block scope: means it belongs to the nearest set of curly braces (`function`, `if/else`, `loops`)
+
+### hoisting behavior
+
+- `var`, `let` and `const` are all hoisted but `var` is auto-initialized with `undefined`, meanwhile `let` and `const` are not initialized.
+- accessing them before initialization will result in `reference error` because they are in the `TDZ` from the start of their defining block untill the initialization is processed.
+
+`Best Practices`:
+
+- In modern JavaScript, it's generally recommended to use const by default for variables that don't need to be reassigned. This promotes immutability and prevents accidental changes.
+- If you use universal constant it is preferred to use `SCREAMING_SNAKE_CASE` style
+  ex:
+
+```js
+const EARTH_GRAVITY = 9.81;
+```
+
+- Use let when you need to reassign a variable within its scope.
+- Avoid using var due to its potential for scoping issues and hoisting behavior.
+- If you need to target older browsers, write your code using let/const, and use a transpiler like Babel to compile your code to older syntax.
