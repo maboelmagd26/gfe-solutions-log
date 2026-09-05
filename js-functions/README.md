@@ -33,3 +33,4 @@ npx vitest flatten      # run one challenge's tests
 
 - [flatten](flatten/NOTES.md) — ✅
 - [get-name](get-name/NOTES.md) — ✅
+- [prototype-reduce](prototype-reduce/NOTES.md) — ⚠️ worth checking
